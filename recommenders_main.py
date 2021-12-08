@@ -26,7 +26,7 @@ menu = st.sidebar.radio(
 )
 
 st.sidebar.markdown('---')
-st.sidebar.write('Ana Blanco | Julio 2021 anablancodelgado@gmail.com https://casiopa.github.io/')
+st.sidebar.write('Ana Blanco | Diciembre 2021 anablancodelgado@gmail.com https://casiopa.github.io/')
 
 if menu == 'Data':
     set_data()
