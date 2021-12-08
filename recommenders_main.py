@@ -3,7 +3,7 @@ from recommenders_functions import *
 
 
 st.set_page_config(page_title='Movie Recommenders Systems',
-                   page_icon='https://www.google.com/s2/favicons?domain=www.imdb.com',
+                   page_icon='https://www.themoviedb.org/assets/2/favicon-32x32-543a21832c8931d3494a68881f6afcafc58e96c5d324345377f3197a37b367b5.png',
                    layout="wide")
 
 
@@ -13,7 +13,8 @@ st.set_page_config(page_title='Movie Recommenders Systems',
 st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
 
 
-#st.sidebar.image('images/800px-IMDB_Logo_2016.svg.png', width=200)
+st.sidebar.image('images/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.png', width=180)
+st.sidebar.image('images/movielens-logo.svg', width=180)
 st.sidebar.header('Movie Recommenders Systems')
 st.sidebar.markdown('Knowledge, Content and Colaborative Recommender Systems ')
 
