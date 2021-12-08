@@ -41,7 +41,7 @@ def print_movies(df):
         st.subheader(str(i+1) + '. ' + df.loc[idx, 'title'])
         poster_url = tmdb_image_path + df.loc[idx, 'poster_path']
         print(poster_url)
-        col1, col2 = st.columns([1,5])
+        col1, col2 = st.columns([1,6])
         col1.image(poster_url, use_column_width=True)
         col2.write(df.loc[idx, 'overview'])
         col2.write('SCORE: '+ str(round(df.loc[idx, 'score'], 2)))
@@ -55,8 +55,10 @@ def set_data():
     st.write(movies)
 
 def set_simple():
+    st.title('Simple Recommender System')
+    st.subheader('IMDb Top 250')
     movies = load_movies()
     percentile = st.slider('Percentile', value=0.95, min_value=0.5, max_value=1.0, step=0.05)
-    best_movies = simple_recommender(movies, percentile)[['title', 'vote_count', 'vote_average', 'score', 'runtime', 'poster_path', 'overview']].head(25)
+    best_movies = simple_recommender(movies, percentile)[['title', 'vote_count', 'vote_average', 'score', 'runtime', 'poster_path', 'overview']].head(250)
     print_movies(best_movies)
     #st.dataframe(best_movies)

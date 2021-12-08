@@ -19,8 +19,8 @@ st.sidebar.markdown('Knowledge, Content and Colaborative Recommender Systems ')
 
 
 menu = st.sidebar.radio(
-    "",
-    ("Data", "Simple", "Knowledge-based", "Content-based"),
+    "Data & Recommender Systems",
+    ("Data", "Simple - IMDb Top 250", "Knowledge-based", "Content-based"),
 )
 
 
@@ -31,7 +31,7 @@ st.sidebar.write('Ana Blanco | Julio 2021 anablancodelgado@gmail.com https://cas
 if menu == 'Data':
     set_data()
     #pass
-elif menu == 'Simple':
+elif menu == 'Simple - IMDb Top 250':
     set_simple()
     #pass
 elif menu == 'Knowledge-based':
