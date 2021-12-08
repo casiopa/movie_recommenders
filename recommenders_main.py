@@ -13,10 +13,11 @@ st.set_page_config(page_title='Movie Recommenders Systems',
 st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
 
 
-st.sidebar.image('images/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.png', width=180)
-st.sidebar.image('images/movielens-logo.svg', width=180)
+st.sidebar.image('images/blue_square_1-5bdc75aaebeb75dc7ae79426ddd9be3b2be1e342510f8202baf6bffa71d7f5c4.png', width=260)
+st.sidebar.write('             ')
+st.sidebar.image('images/movielens-logo.svg', width=100)
 st.sidebar.header('Movie Recommenders Systems')
-st.sidebar.markdown('Knowledge, Content and Colaborative Recommender Systems ')
+#st.sidebar.markdown('Knowledge, Content and Colaborative Recommender Systems ')
 
 
 menu = st.sidebar.radio(
@@ -24,10 +25,8 @@ menu = st.sidebar.radio(
     ("Data", "Simple - IMDb Top 250", "Knowledge-based", "Content-based"),
 )
 
-
 st.sidebar.markdown('---')
 st.sidebar.write('Ana Blanco | Julio 2021 anablancodelgado@gmail.com https://casiopa.github.io/')
-
 
 if menu == 'Data':
     set_data()
