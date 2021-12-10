@@ -43,7 +43,7 @@ def print_movies(df):
         col1.image(poster_url, use_column_width=True)
         col2.write(df.loc[idx, 'overview'])
         col2.write('Score Recommender: '+ str(round(df.loc[idx, 'score'], 2)))
-        col2.write(f"Rating TMDb: {str(round(df.loc[idx, 'vote_average'], 2))}   |   {str(df.loc[idx, 'vote_count'])}votes   |   [TMDb page]({tmdb_url})")
+        col2.write(f"Rating TMDb: {str(round(df.loc[idx, 'vote_average'], 2))}   |   {str(df.loc[idx, 'vote_count'])} votes   |   [TMDb page]({tmdb_url})")
 
 
 
