@@ -4,8 +4,6 @@ from recommenders_variables import *
 
 
 
-
-
 @st.cache(persist=True)
 def load_movies():
     data = pd.read_csv(data_path + 'movies_metadata_v2.csv', low_memory=False)
@@ -40,25 +38,28 @@ def print_movies(df):
     for i, idx in enumerate(df.index):
         st.subheader(str(i+1) + '. ' + df.loc[idx, 'title'])
         poster_url = tmdb_image_path + df.loc[idx, 'poster_path']
-        print(poster_url)
-        col1, col2 = st.columns([1,6])
+        tmdb_url = tmbd_path + str(df.loc[idx, 'id'])
+        col1, col2 = st.columns([1,8])
         col1.image(poster_url, use_column_width=True)
         col2.write(df.loc[idx, 'overview'])
-        col2.write('SCORE: '+ str(round(df.loc[idx, 'score'], 2)))
-
-
+        col2.write('Score Recommender: '+ str(round(df.loc[idx, 'score'], 2)))
+        col2.write(f"Rating TMDb: {str(round(df.loc[idx, 'vote_average'], 2))}   |   {str(df.loc[idx, 'vote_count'])}votes   |   [TMDb page]({tmdb_url})")
 
 
 
 def set_data():
+    st.title('Movies Recommender Systems - Data')
+
     movies = load_movies()
-    st.write(movies)
+    st.header('`movies_metadata_v2`')
+    st.dataframe(movies)
+
 
 def set_simple():
     st.title('Simple Recommender System')
-    st.subheader('IMDb Top 250')
+    st.subheader('TMDb Top 250')
     movies = load_movies()
     percentile = st.slider('Percentile', value=0.95, min_value=0.5, max_value=1.0, step=0.05)
-    best_movies = simple_recommender(movies, percentile)[['title', 'vote_count', 'vote_average', 'score', 'runtime', 'poster_path', 'overview']].head(250)
+    best_movies = simple_recommender(movies, percentile)[['title', 'id', 'imdb_id', 'score', 'vote_average', 'vote_count', 'runtime', 'poster_path', 'overview']].head(250)
     print_movies(best_movies)
     #st.dataframe(best_movies)

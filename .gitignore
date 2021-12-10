@@ -1,7 +1,7 @@
 0*.ipynb
 credits.csv
 ratings.csv
-*credentials*
+credentials.py
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
