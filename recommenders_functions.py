@@ -8,7 +8,7 @@ from recommenders_variables import *
 
 @st.cache(persist=True)
 def load_movies():
-    data = pd.read_csv(data_path + 'movies_metadata.csv', low_memory=False)
+    data = pd.read_csv(data_path + 'movies_metadata_v2.csv', low_memory=False)
     return data
 
 
