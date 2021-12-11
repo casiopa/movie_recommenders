@@ -35,8 +35,8 @@ elif menu == 'Simple - IMDb Top 250':
     set_simple()
     #pass
 elif menu == 'Knowledge-based':
-    #set_knowledge()
-    pass
+    set_knowledge()
+    ##pass
 elif menu == 'Content-based':
     #set_content()
     pass
