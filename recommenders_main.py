@@ -10,7 +10,7 @@ st.set_page_config(page_title='Movie Recommenders Systems',
 
 # Pone el radio-button en horizontal. Afecta a todos los radio button de una página.
 # Por eso está puesto en este que es general a todo
-st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
+#st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
 
 
 st.sidebar.image('images/blue_square_1-5bdc75aaebeb75dc7ae79426ddd9be3b2be1e342510f8202baf6bffa71d7f5c4.png', width=260)
@@ -22,7 +22,7 @@ st.sidebar.header('Movie Recommenders Systems')
 
 menu = st.sidebar.radio(
     "Data & Recommender Systems",
-    ("Data", "Simple - IMDb Top 250", "Knowledge-based", "Content-based"),
+    ("Data", "Simple - IMDb Top 250", "Knowledge-based", "Content-based", "Collaborative"),
 )
 
 st.sidebar.markdown('---')
@@ -39,6 +39,9 @@ elif menu == 'Knowledge-based':
     ##pass
 elif menu == 'Content-based':
     #set_content()
+    pass
+elif menu == 'Collaborative':
+    #set_colaborative()
     pass
 
 

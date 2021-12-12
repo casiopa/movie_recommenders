@@ -2,6 +2,8 @@
 credits.csv
 ratings.csv
 credentials.py
+*.zip
+*.gz
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
